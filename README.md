@@ -1,97 +1,86 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Agentica React Native Template
 
-# Getting Started
+A template for building React Native applications with Agentica integration.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Features
 
-## Step 1: Start Metro
+- Real-time chat interface with ChatGPT
+- Markdown support for message formatting
+- Cross-platform support (iOS & Android)
+- Agentica framework integration
+- Type-safe API validation with Typia
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Tech Stack
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+### Core Dependencies
 
-```sh
-# Using npm
+- **React Native**: Mobile application framework
+- **TypeScript**: Type-safe JavaScript
+- **Expo**: Development platform for React Native
+- **Agentica**: Framework for AI integration
+
+### Chat & UI
+
+- **react-native-gifted-chat**: Chat interface components
+- **react-native-markdown-display**: Markdown rendering for messages
+
+### Native Integration (Example Code)
+
+- **expo-calendar**: Native calendar API integration
+
+## Getting Started
+
+1. Install dependencies
+
+```bash
+npm install
+```
+
+3. Configure environment variables
+   Create a `.env` file in the root directory with:
+
+```
+EXPO_PUBLIC_OPENAI_API_KEY=your_openai_api_key
+```
+
+4. Start the development server
+
+```bash
 npm start
 
-# OR using Yarn
-yarn start
-```
-
-## Step 2: Build and run your app
-
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
+# ios
+npx pod-install
 npm run ios
 
-# OR using Yarn
-yarn ios
+# android
+npx run android
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## Project Structure
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+```
+src/
+├── App.tsx              # Main application component
+├── components/          # Reusable UI components
+├── constants/           # Application constants
+├── controller/          # API controllers
+│   └── calendar.ts      # Calendar API wrapper(Example)
+└── shim.ts              # Polyfills
+```
 
-## Step 3: Modify your app
+## Usage
 
-Now that you have successfully run the app, let's make changes!
+### Extending the Template
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+To add new features:
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+1. Create new controllers in `src/controller/`
+2. Implement Tool functions that can be used by the Agent! You can utilize native features (Camera, Calendar, SMS) as tools.
+3. Use `typia.llm.application` to create a controller that will be passed to Agentica.
+4. Apply your created Controller to Agentica in `App.tsx`.
+5. Congratulations! Your code is now available for the Agent to use!
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+## Important Note
 
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This template is a proof-of-concept template created to demonstrate whether Agentica can call native features.
+To use this in a production environment, architectural modifications are required to properly secure the OpenAI Key.

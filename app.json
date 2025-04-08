@@ -1,4 +1,14 @@
 {
-  "name": "rn_chat_bare",
-  "displayName": "rn_chat_bare"
+  "name": "agentica_template_react_native",
+  "displayName": "agentica_template_react_native",
+  "expo": {
+    "plugins": [
+      [
+        "expo-calendar",
+        {
+          "calendarPermission": "The app needs to access your calendar."
+        }
+      ]
+    ]
+  }
 }

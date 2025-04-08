@@ -1,5 +1,5 @@
 {
-  "name": "rn_chat_bare",
+  "name": "agentica_template_react_native",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -7,16 +7,37 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "ts-patch install"
   },
   "dependencies": {
-    "react": "19.0.0",
-    "react-native": "0.78.2"
+    "@agentica/core": "^0.16.3",
+    "@azure/core-asynciterator-polyfill": "^1.0.2",
+    "base-64": "^1.0.0",
+    "expo": "^52.0.0",
+    "expo-calendar": "^14.0.6",
+    "openai": "^4.91.0",
+    "react": "18.2.0",
+    "react-native": "0.77.2",
+    "react-native-config": "^1.5.5",
+    "react-native-fetch-api": "^3.0.0",
+    "react-native-get-random-values": "^1.11.0",
+    "react-native-gifted-chat": "^2.8.1",
+    "react-native-keyboard-controller": "^1.16.8",
+    "react-native-markdown-display": "^7.0.2",
+    "react-native-polyfill-globals": "^3.1.0",
+    "react-native-reanimated": "^3.17.2",
+    "react-native-url-polyfill": "^2.0.0",
+    "text-encoding": "^0.7.0",
+    "typia": "^9.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.3",
     "@babel/runtime": "^7.25.0",
+    "@callstack/repack": "^5.0.6",
+    "@callstack/repack-plugin-expo-modules": "^5.0.6",
+    "@callstack/repack-plugin-reanimated": "^5.0.6",
     "@react-native-community/cli": "15.0.1",
     "@react-native-community/cli-platform-android": "15.0.1",
     "@react-native-community/cli-platform-ios": "15.0.1",
@@ -24,14 +45,19 @@
     "@react-native/eslint-config": "0.78.2",
     "@react-native/metro-config": "0.78.2",
     "@react-native/typescript-config": "0.78.2",
+    "@rspack/core": "^1.2.8",
+    "@ryoppippi/unplugin-typia": "^2.1.4",
+    "@swc/helpers": "^0.5.15",
     "@types/jest": "^29.5.13",
     "@types/react": "^19.0.0",
     "@types/react-test-renderer": "^19.0.0",
+    "dotenv-webpack": "^8.1.0",
     "eslint": "^8.19.0",
     "jest": "^29.6.3",
     "prettier": "2.8.8",
     "react-test-renderer": "19.0.0",
-    "typescript": "5.0.4"
+    "ts-patch": "^3.3.0",
+    "typescript": "~5.8.3"
   },
   "engines": {
     "node": ">=18"

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "rn_chat_bare.app"
-               BlueprintName = "rn_chat_bare"
-               ReferencedContainer = "container:rn_chat_bare.xcodeproj">
+               BuildableName = "agentica_template_react_native.app"
+               BlueprintName = "agentica_template_react_native"
+               ReferencedContainer = "container:agentica_template_react_native.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "rn_chat_bareTests.xctest"
-               BlueprintName = "rn_chat_bareTests"
-               ReferencedContainer = "container:rn_chat_bare.xcodeproj">
+               BuildableName = "agentica_template_react_nativeTests.xctest"
+               BlueprintName = "agentica_template_react_nativeTests"
+               ReferencedContainer = "container:agentica_template_react_native.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "rn_chat_bare.app"
-            BlueprintName = "rn_chat_bare"
-            ReferencedContainer = "container:rn_chat_bare.xcodeproj">
+            BuildableName = "agentica_template_react_native.app"
+            BlueprintName = "agentica_template_react_native"
+            ReferencedContainer = "container:agentica_template_react_native.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "rn_chat_bare.app"
-            BlueprintName = "rn_chat_bare"
-            ReferencedContainer = "container:rn_chat_bare.xcodeproj">
+            BuildableName = "agentica_template_react_native.app"
+            BlueprintName = "agentica_template_react_native"
+            ReferencedContainer = "container:agentica_template_react_native.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
