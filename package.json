@@ -16,7 +16,7 @@
     "base-64": "^1.0.0",
     "expo": "^52.0.0",
     "expo-calendar": "^14.0.6",
-    "openai": "^4.91.0",
+    "openai": "^4.92.1",
     "react": "18.2.0",
     "react-native": "0.77.2",
     "react-native-config": "^1.5.5",
@@ -29,7 +29,7 @@
     "react-native-reanimated": "^3.17.2",
     "react-native-url-polyfill": "^2.0.0",
     "text-encoding": "^0.7.0",
-    "typia": "^9.0.0"
+    "typia": "^9.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
