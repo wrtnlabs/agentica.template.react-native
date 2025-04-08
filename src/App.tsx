@@ -29,7 +29,7 @@ export default function App(): React.JSX.Element {
            * To use this in a production environment, architectural modifications are required to properly secure the OpenAI Key.
            */
           api: new OpenAI({
-            apiKey: process.env.EXPO_PUBLIC_OPENAI_API_KEY,
+            apiKey: process.env.OPENAI_API_KEY,
             dangerouslyAllowBrowser: true,
           }),
           model: 'gpt-4o',
