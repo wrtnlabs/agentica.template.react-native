@@ -42,6 +42,15 @@ export namespace WRAPPED_CALENDAR {
   }
 
   /**
+   * Requests permission to access reminders.
+   * @returns A promise that resolves to the permission status after the user responds.
+   * @platform ios
+   */
+  export async function wrappedRequestRemindersPermissionsAsync(): Promise<Calendar.PermissionResponse> {
+    return Calendar.requestRemindersPermissionsAsync();
+  }
+
+  /**
    * Creates a new calendar on the device.
    * @param props The properties for the new calendar.
    * @returns A promise that resolves to the ID of the newly created calendar.
