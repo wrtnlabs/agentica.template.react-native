@@ -53,7 +53,7 @@ npx pod-install
 npm run ios
 
 # android
-npx run android
+npm run android
 ```
 
 ## Project Structure
