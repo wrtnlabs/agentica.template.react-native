@@ -14,10 +14,13 @@ import {
 import {CalendarController} from './controller/calendar';
 import {AgenticaProfile, MyProfile} from './constants';
 import {MarkdownMessage} from './components/MarkdownMessage';
+import {BatteryController} from './controller/battery';
+import {SMSController} from './controller/sms';
 
 export default function App(): React.JSX.Element {
   const [messages, setMessages] = useState<IMessage[]>([]);
   const [loading, setLoading] = useState(false);
+
   const [agent] = useState<MicroAgentica<'chatgpt'>>(
     () =>
       new MicroAgentica({
@@ -34,7 +37,7 @@ export default function App(): React.JSX.Element {
           }),
           model: 'gpt-4o',
         },
-        controllers: [CalendarController],
+        controllers: [CalendarController, BatteryController, SMSController],
       }),
   );
 
