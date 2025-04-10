@@ -30,7 +30,13 @@ A template for building React Native applications with Agentica integration.
 
 ## Getting Started
 
-1. Install dependencies
+1. Prerequisite
+
+- Node.js (>=18)
+- iOS/Android development environment setup (Simulator)
+  - JDK Version (= 17)
+
+2. Install dependencies
 
 ```bash
 npm install
@@ -40,7 +46,7 @@ npm install
    Create a `.env` file in the root directory with:
 
 ```
-EXPO_PUBLIC_OPENAI_API_KEY=your_openai_api_key
+OPENAI_API_KEY=your_openai_api_key
 ```
 
 4. Start the development server
@@ -64,7 +70,9 @@ src/
 ├── components/          # Reusable UI components
 ├── constants/           # Application constants
 ├── controller/          # API controllers
-│   └── calendar.ts      # Calendar API wrapper(Example)
+│   ├── calendar.ts      # Calendar API wrapper(Example)
+│   ├── battery.ts       # Battery API wrapper(Example)
+│   └── sms.ts           # SMS API wrapper(Example)
 └── shim.ts              # Polyfills
 ```
 
