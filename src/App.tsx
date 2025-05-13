@@ -7,9 +7,10 @@ import {GiftedChat, type IMessage} from 'react-native-gifted-chat';
 import OpenAI from 'openai';
 import {
   AgenticaDescribeEvent,
-  AgenticaTextEvent,
+  AgenticaAssistantMessageEvent,
   IAgenticaEventJson,
   MicroAgentica,
+  AgenticaUserMessageEvent,
 } from '@agentica/core';
 import {CalendarController} from './controller/calendar';
 import {AgenticaProfile, MyProfile} from './constants';
@@ -42,8 +43,15 @@ export default function App(): React.JSX.Element {
   );
 
   const agenticaEventHandler = useCallback(
-    async (event: AgenticaDescribeEvent<'chatgpt'> | AgenticaTextEvent) => {
-      await event.join();
+    async (
+      event:
+        | AgenticaDescribeEvent<'chatgpt'>
+        | AgenticaAssistantMessageEvent
+        | AgenticaUserMessageEvent,
+    ) => {
+      if (event.type !== 'userMessage') {
+        await event.join();
+      }
       setMessages(prev =>
         GiftedChat.append(prev, [convertMessage(event.toJSON())]),
       );
@@ -62,10 +70,12 @@ export default function App(): React.JSX.Element {
 
   useEffect(() => {
     agent.on('describe', agenticaEventHandler);
-    agent.on('text', agenticaEventHandler);
+    agent.on('assistantMessage', agenticaEventHandler);
+    agent.on('userMessage', agenticaEventHandler);
     return () => {
       agent.off('describe', agenticaEventHandler);
-      agent.off('text', agenticaEventHandler);
+      agent.off('assistantMessage', agenticaEventHandler);
+      agent.off('userMessage', agenticaEventHandler);
     };
   }, [agenticaEventHandler, agent]);
 
@@ -83,12 +93,21 @@ export default function App(): React.JSX.Element {
 }
 
 const convertMessage = (
-  event: IAgenticaEventJson.IDescribe | IAgenticaEventJson.IText,
+  event:
+    | IAgenticaEventJson.IDescribe
+    | IAgenticaEventJson.IAssistantMessage
+    | IAgenticaEventJson.IUserMessage,
 ): IMessage => {
-  const isMe = event.type === 'text' && event.role === 'user';
+  const isMe = event.type === 'userMessage';
   return {
     _id: new Date().getTime().toString(),
-    text: event.text,
+    text:
+      event.type === 'userMessage'
+        ? event.contents
+            .filter(content => content.type === 'text')
+            .map(content => content.text)
+            .join('')
+        : event.text,
     createdAt: new Date(),
     user: isMe ? MyProfile : AgenticaProfile,
   };

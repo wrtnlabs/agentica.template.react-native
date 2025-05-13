@@ -8,17 +8,20 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "prepare": "ts-patch install"
+    "prepare": "ts-patch install",
+    "build": "npm run bundle:ios && npm run bundle:android",
+    "bundle:ios": "react-native bundle --platform ios --dev false --entry-file index.js --bundle-output ios/main.jsbundle --assets-dest ios",
+    "bundle:android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/main.jsbundle --assets-dest android"
   },
   "dependencies": {
-    "@agentica/core": "^0.16.3",
+    "@agentica/core": "^0.25.0",
     "@azure/core-asynciterator-polyfill": "^1.0.2",
     "base-64": "^1.0.0",
     "expo": "^52.0.0",
     "expo-battery": "~9.0.2",
     "expo-calendar": "^14.0.6",
     "expo-sms": "~13.0.1",
-    "openai": "^4.91.0",
+    "openai": "^4.93.0",
     "react": "18.2.0",
     "react-native": "0.77.2",
     "react-native-config": "^1.5.5",
@@ -31,7 +34,7 @@
     "react-native-reanimated": "^3.17.2",
     "react-native-url-polyfill": "^2.0.0",
     "text-encoding": "^0.7.0",
-    "typia": "^9.0.0",
+    "typia": "^9.1.0",
     "web-streams-polyfill": "3.3.3"
   },
   "devDependencies": {

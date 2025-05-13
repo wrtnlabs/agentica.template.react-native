@@ -24,6 +24,7 @@ export default {
     ...Repack.getResolveOptions(),
     fallback: {
       crypto: false,
+      '@modelcontextprotocol/sdk': false,
     },
   },
   module: {
