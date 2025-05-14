@@ -21,7 +21,7 @@
     "expo-battery": "~9.0.2",
     "expo-calendar": "^14.0.6",
     "expo-sms": "~13.0.1",
-    "openai": "^4.93.0",
+    "openai": "^4.98.0",
     "react": "18.2.0",
     "react-native": "0.77.2",
     "react-native-config": "^1.5.5",
@@ -34,7 +34,7 @@
     "react-native-reanimated": "^3.17.2",
     "react-native-url-polyfill": "^2.0.0",
     "text-encoding": "^0.7.0",
-    "typia": "^9.1.0",
+    "typia": "^9.3.0",
     "web-streams-polyfill": "3.3.3"
   },
   "devDependencies": {
