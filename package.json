@@ -60,8 +60,8 @@
     "eslint": "^8.19.0",
     "jest": "^29.6.3",
     "prettier": "2.8.8",
-    "ts-patch": "^3.3.0",
-    "typescript": "~5.8.3"
+    "ts-patch": "^4.0.1",
+    "typescript": "~6.0.3"
   },
   "engines": {
     "node": ">=18"
